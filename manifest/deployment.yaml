@@ -1,0 +1,22 @@
+# Complete Manifest Where in single yml we defined Deployment & Service for SpringApp & PVC(with default  StorageClass),ReplicaSet & Service For Mongo.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: directory
+  name: elitebook
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elitebook
+  template:
+    metadata:
+      name: elitebook
+      labels:
+        app: elitebook
+    spec:
+      containers:
+        - name: elitebook-container
+          image: 322266404742.dkr.ecr.us-west-1.amazonaws.com/elitebook:1.0.0
+          ports:
+            - containerPort: 8080
