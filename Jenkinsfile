@@ -10,7 +10,7 @@ tools {
     stages {
       stage('1. Git Checkout') {
         steps {
-          git branch: 'dev', credentialsId: 'elitesgithub', url: 'https://github.com/ron8t/techtrail.git'
+         git branch: 'main', url: 'https://github.com/ron8t/techtrail.git'
         }
       }
       stage('2. Build with maven') { 
